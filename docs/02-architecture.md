@@ -44,17 +44,17 @@ Primary design goal: **minimize attack surface** while still demonstrating real 
 
 ```mermaid
 flowchart TB
-  U[User Browser] --> CF[Cloudflare Proxy/CDN]
+  U[User Browser] --> CF[Cloudflare Proxy / CDN]
   CF --> N[Nginx on VPS :443]
 
   N --> S[Static Site Files]
   N -->|/api/*| A[FastAPI on localhost:8000]
 
-  A -->|send message| M[Managed Email Provider]
-  M -->|deliver| Inbox[contact@ / security@]
+  A --> M[Managed Email Provider]
+  M --> Inbox[Contact and Security Mailboxes]
 
   subgraph DNS[DNS Records in Cloudflare]
-    MX[MX Records -> Email Provider]
+    MX[MX Records]
     SPF[SPF Record]
     DKIM[DKIM Record]
     DMARC[DMARC Record]
