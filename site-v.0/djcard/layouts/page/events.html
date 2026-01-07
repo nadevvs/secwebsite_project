@@ -1,0 +1,28 @@
+{{ define "main" }}
+<section class="page">
+  <h1 class="title">Events</h1>
+
+  <h2 class="section-title">Upcoming</h2>
+  <ul class="list">
+    {{ range .Site.Data.events.upcoming }}
+      <li class="list-item">
+        <span class="muted">{{ .date }}</span> — <strong>{{ .city }}</strong>, {{ .venue }}
+        {{ if .link }} · <a href="{{ .link }}" target="_blank" rel="noopener noreferrer">link</a>{{ end }}
+      </li>
+    {{ else }}
+      <li class="list-item muted">No upcoming events posted yet.</li>
+    {{ end }}
+  </ul>
+
+  <h2 class="section-title">Past</h2>
+  <ul class="list">
+    {{ range .Site.Data.events.past }}
+      <li class="list-item">
+        <span class="muted">{{ .date }}</span> — <strong>{{ .city }}</strong>, {{ .venue }}
+      </li>
+    {{ else }}
+      <li class="list-item muted">No past events listed yet.</li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

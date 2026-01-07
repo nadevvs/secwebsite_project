@@ -1,0 +1,12 @@
+# Hugo build output
+site-v.0/djcard/public/
+site-v.0/djcard/.hugo_build.lock
+
+# Secrets / env
+.env
+*.pem
+*.key
+*.crt
+
+# Logs
+*.log

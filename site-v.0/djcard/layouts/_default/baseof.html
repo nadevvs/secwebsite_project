@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
+    <link rel="stylesheet" href="/css/site.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a class="nav__link {{ if .IsHome }}is-active{{ end }}" href="/">Home</a>
+        <a class="nav__link {{ if hasPrefix .RelPermalink "/events/" }}is-active{{ end }}" href="/events/">Events</a>
+        <a class="nav__link {{ if eq .RelPermalink "/gallery/" }}is-active{{ end }}" href="/gallery/">Gallery</a>
+        <a class="nav__link {{ if eq .RelPermalink "/contact/" }}is-active{{ end }}" href="/contact/">Contact</a>
+      </nav>
+    </header>
+
+    <main class="main">
+      {{ block "main" . }}{{ end }}
+    </main>
+  </body>
+</html>

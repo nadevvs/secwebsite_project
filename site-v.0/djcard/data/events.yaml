@@ -1,0 +1,9 @@
+upcoming:
+  - date: "2026-01-23"
+    city: "Warsaw"
+    venue: "K-Bar Powisle"
+    link: "https://example.com"
+past:
+  - date: "2025-10-03"
+    city: "Warsaw"
+    venue: "K-Bar Powisle"
