@@ -1,0 +1,40 @@
+1. System Overview
+
+Operating system: Ubuntu Server (LTS)
+
+Hosting provider: Hetzner Cloud
+
+Web server: Nginx
+
+DNS & CDN: Cloudflare
+
+Intrusion prevention: Fail2ban
+
+Firewall: UFW
+
+2. Considered threats
+
+- automated ssh brute-force attacks
+- web scanners and exploit probing
+- direct IP access bypassing CDN/WAF
+- misconfig exposure (default configs)
+
+3. Mitigations
+
+- no root login, very strong password policy
+- ufw only allowing ssh from anywhere and only cloudflare ip ranges for web ports
+- cloudflare proxy enabled
+- fail2ban enabled to decrease probability of intrusion
+- nginx configured, no defaul site, hidden files, server version disclosure disabled
+- second firewall enabled at vps dashboard
+- vps dashboard protected with mfa
+- dnssec enabled
+- for mail: mx, spf, dkim, dmarc records set up
+
+4. Security Posture Summary
+
+Defense in depth achieved through:
+CDN/WAF, firewall, nginx config, intrusion prevention, secure auth (strong password), https only
+
+5. Other
+Review date: Feb 3, 2026 
