@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+</head>
+<body>
+  <nav>
+    {{ range .Site.Menus.main }}
+      <a href="{{ .URL }}">{{ .Name }}</a>
+      {{ if not (eq .Name "Booking") }} | {{ end }}
+    {{ end }}
+  </nav>
+  <hr>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+</body>
+</html>

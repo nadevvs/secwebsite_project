@@ -1,0 +1,24 @@
+baseURL = "https://nadevvs.com/"
+languageCode = "en-us"
+title = "Nadevvs"
+disableKinds = ["taxonomy", "term"]
+
+[params]
+  description = "DJ / Producer"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 10
+
+  [[menu.main]]
+    name = "Gallery"
+    url = "/gallery/"
+    weight = 20
+
+  [[menu.main]]
+    name = "Booking"
+    url = "/booking/"
+    weight = 30
+
